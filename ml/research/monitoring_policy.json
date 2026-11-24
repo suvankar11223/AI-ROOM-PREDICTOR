@@ -1,0 +1,29 @@
+{
+  "policy_version": "1.0.0",
+  "status": "policy_and_utilities_supplied_not_connected_to_live_telemetry",
+  "reference_baseline": "2019 NYC listing snapshot; replace only after a newer independent labelled snapshot is validated",
+  "thresholds": {
+    "feature_psi_warning": 0.1,
+    "feature_psi_critical": 0.2,
+    "prediction_psi_warning": 0.1,
+    "prediction_psi_critical": 0.2,
+    "macro_f1_drop_warning": 0.05,
+    "macro_f1_drop_critical": 0.1,
+    "shared_room_recall_drop_warning": 0.05,
+    "shared_room_recall_drop_critical": 0.1
+  },
+  "actions": {
+    "warning": "Investigate input quality, category drift, class mix, and prediction distribution. Do not auto-retrain.",
+    "critical": "Hold model promotion, investigate root cause, obtain reviewed labels, run temporal and grouped validation, and retain the last approved artifact for rollback."
+  },
+  "retraining_gates": [
+    "dataset provenance and target-label quality verified",
+    "feature availability at prediction time verified",
+    "host-aware and time-aware validation completed",
+    "class-wise precision and recall meet agreed product requirements",
+    "probability calibration re-evaluated",
+    "clean-environment artifact loading verified",
+    "shadow or canary deployment passed"
+  ],
+  "rollback": "Keep immutable model artifacts and metadata. Promote by changing a model-registry pointer only after verification; revert the pointer if monitoring gates fail."
+}

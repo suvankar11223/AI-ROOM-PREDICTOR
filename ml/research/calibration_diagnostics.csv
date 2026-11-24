@@ -1,0 +1,7 @@
+scenario,class,one_vs_rest_brier,calibration_bins,mean_absolute_bin_gap
+without_reviews,Entire home/apt,0.0991391724838731,10,0.03259928759286006
+without_reviews,Private room,0.11018861620904939,10,0.03646992214670314
+without_reviews,Shared room,0.017045589142091182,10,0.01004490370726359
+with_reviews,Entire home/apt,0.09686451856112661,10,0.03551712993414961
+with_reviews,Private room,0.10869773661504958,10,0.03595808221585483
+with_reviews,Shared room,0.017308016066894902,10,0.011130961365158464

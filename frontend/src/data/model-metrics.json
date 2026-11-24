@@ -1,0 +1,71 @@
+{
+  "model_version": "3.0.0",
+  "dataset": {
+    "file": "AB_NYC_2019.csv",
+    "rows": 48895,
+    "columns": 16,
+    "sha256": "e420db40ff10fcb40efc1b5b1648ee0b18a48f4e4537155cecc59fe95d18783a",
+    "snapshot_year": 2019
+  },
+  "holdout": {
+    "protocol": "GroupShuffleSplit",
+    "test_fraction": 0.3,
+    "random_state": 42,
+    "test_rows": 14596,
+    "test_hosts": 11238,
+    "train_test_host_overlap": 0
+  },
+  "models": {
+    "without_reviews": {
+      "accuracy": 0.852151274321732,
+      "macro_f1": 0.702783325964729,
+      "balanced_accuracy": 0.6708297918188376,
+      "shared_room_precision": 0.6174496644295302,
+      "shared_room_recall": 0.2884012539184953,
+      "shared_room_f1": 0.39316239316239315,
+      "brier": 0.22637337783501368,
+      "log_loss": 0.39677875448111155,
+      "features": [
+        "neighbourhood_group",
+        "neighbourhood",
+        "latitude",
+        "longitude",
+        "price",
+        "minimum_nights",
+        "availability_365",
+        "calculated_host_listings_count"
+      ],
+      "estimator": "HistGradientBoostingClassifier(class_weight=balanced) + host-grouped sigmoid calibration"
+    },
+    "with_reviews": {
+      "accuracy": 0.8558509180597424,
+      "macro_f1": 0.703836761895536,
+      "balanced_accuracy": 0.6735527504902777,
+      "shared_room_precision": 0.5935483870967742,
+      "shared_room_recall": 0.2884012539184953,
+      "shared_room_f1": 0.3881856540084388,
+      "brier": 0.22287027124307107,
+      "log_loss": 0.390510687096015,
+      "features": [
+        "neighbourhood_group",
+        "neighbourhood",
+        "latitude",
+        "longitude",
+        "price",
+        "minimum_nights",
+        "availability_365",
+        "calculated_host_listings_count",
+        "number_of_reviews",
+        "reviews_per_month"
+      ],
+      "estimator": "HistGradientBoostingClassifier(class_weight=balanced) + host-grouped sigmoid calibration"
+    }
+  },
+  "unresolved_production_gates": [
+    "Nested grouped cross-validation and expanded model-family/hyperparameter selection were not completed. nested_validation.py is provided for this gate.",
+    "The 2019 cross-sectional dataset cannot prove when each predictor became available. The application prediction timestamp must be defined before claiming point-in-time leakage safety.",
+    "A newer independent NYC labelled snapshot was not downloaded into this runtime. external_validation.py is provided; no temporal/external score is claimed.",
+    "Shared room recall remains low and requires a product-defined precision/recall acceptance target and further training-only threshold/imbalance work.",
+    "Monitoring utilities and policy are supplied but not connected to live telemetry, delayed labels, alerting, or a model registry."
+  ]
+}

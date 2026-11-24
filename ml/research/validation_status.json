@@ -1,0 +1,22 @@
+{
+  "model_release_status": "candidate_not_production_approved",
+  "completed": {
+    "host_disjoint_holdout": true,
+    "fitted_preprocessing_inside_model": true,
+    "class_weighted_candidate": true,
+    "sigmoid_probability_calibration": true,
+    "heldout_class_metrics": true,
+    "borough_and_price_subgroup_diagnostics": true,
+    "permutation_importance": true,
+    "artifact_reload_and_probability_checks": true,
+    "inference_input_validation": true,
+    "monitoring_utilities_and_retraining_policy": true
+  },
+  "not_completed": {
+    "prediction_time_contract_for_listing_creation": "The 2019 snapshot does not prove feature availability at original listing creation. Current model scope is snapshot-time classification.",
+    "nested_grouped_model_selection": "A runnable nested_validation.py is included, but full nested model-family selection was not completed in this runtime.",
+    "newer_temporal_external_validation": "A newer labelled NYC snapshot was not retrieved into the execution environment. Run external_validation.py after obtaining the file.",
+    "production_monitoring_connection": "Utilities and policy are included; no live prediction logs or delayed labels are connected.",
+    "operational_shared_room_acceptance_threshold": "No product requirement for minimum recall/precision was supplied. Current recall is still weak."
+  }
+}

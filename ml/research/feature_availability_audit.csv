@@ -1,0 +1,17 @@
+feature,scenario,status
+neighbourhood_group,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+neighbourhood,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+latitude,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+longitude,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+price,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+minimum_nights,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+availability_365,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+calculated_host_listings_count,both,Observed in 2019 snapshot; availability at original listing creation is unproven.
+number_of_reviews,with_reviews only,Review-history feature; unavailable for a zero-review listing and excluded from no-review model.
+reviews_per_month,with_reviews only,Review-history feature; unavailable for a zero-review listing and excluded from no-review model.
+id,excluded,Excluded from predictors; host_id is used only as a grouping key.
+host_id,excluded,Excluded from predictors; host_id is used only as a grouping key.
+name,excluded,Excluded from predictors; host_id is used only as a grouping key.
+host_name,excluded,Excluded from predictors; host_id is used only as a grouping key.
+last_review,excluded,Excluded from predictors; host_id is used only as a grouping key.
+room_type,excluded,Excluded from predictors; host_id is used only as a grouping key.

@@ -1,0 +1,19 @@
+scenario,dimension,group,n,macro_f1,shared_room_recall
+without_reviews,borough,Bronx,366,0.5364977837625541,0.0
+without_reviews,borough,Brooklyn,6002,0.7443988231994649,0.3958333333333333
+without_reviews,borough,Manhattan,6456,0.6537324736788624,0.183206106870229
+without_reviews,borough,Queens,1675,0.7157998301094027,0.3717948717948718
+without_reviews,borough,Staten Island,97,0.7458019546196778,0.5
+without_reviews,price_quartile,"(-0.001, 70.0]",3954,0.518620759287685,0.4080717488789238
+without_reviews,price_quartile,"(70.0, 110.0]",3533,0.5085320683169171,0.018518518518518517
+without_reviews,price_quartile,"(110.0, 180.0]",3562,0.4410443397954628,0.0
+without_reviews,price_quartile,"(180.0, 10000.0]",3547,0.3790218844795757,0.0
+with_reviews,borough,Bronx,366,0.5354380766687385,0.0
+with_reviews,borough,Brooklyn,6002,0.7515210464581931,0.40625
+with_reviews,borough,Manhattan,6456,0.6460878585640257,0.16793893129770993
+with_reviews,borough,Queens,1675,0.7244771367676396,0.38461538461538464
+with_reviews,borough,Staten Island,97,0.773678817157078,0.5
+with_reviews,price_quartile,"(-0.001, 70.0]",3954,0.5183586038607148,0.4080717488789238
+with_reviews,price_quartile,"(70.0, 110.0]",3533,0.5137303335882435,0.018518518518518517
+with_reviews,price_quartile,"(110.0, 180.0]",3562,0.4557365934138668,0.0
+with_reviews,price_quartile,"(180.0, 10000.0]",3547,0.37864155877730177,0.0

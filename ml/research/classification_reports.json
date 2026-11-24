@@ -1,0 +1,68 @@
+{
+  "without_reviews": {
+    "Entire home/apt": {
+      "precision": 0.8636306924516531,
+      "recall": 0.8939687459640966,
+      "f1-score": 0.8785378855184668,
+      "support": 7743.0
+    },
+    "Private room": {
+      "precision": 0.8432835820895522,
+      "recall": 0.830119375573921,
+      "f1-score": 0.8366496992133272,
+      "support": 6534.0
+    },
+    "Shared room": {
+      "precision": 0.6174496644295302,
+      "recall": 0.2884012539184953,
+      "f1-score": 0.39316239316239315,
+      "support": 319.0
+    },
+    "accuracy": 0.852151274321732,
+    "macro avg": {
+      "precision": 0.7747879796569119,
+      "recall": 0.6708297918188376,
+      "f1-score": 0.702783325964729,
+      "support": 14596.0
+    },
+    "weighted avg": {
+      "precision": 0.8491418073430601,
+      "recall": 0.852151274321732,
+      "f1-score": 0.8491783218449007,
+      "support": 14596.0
+    }
+  },
+  "with_reviews": {
+    "Entire home/apt": {
+      "precision": 0.8698819392112535,
+      "recall": 0.8944853415988635,
+      "f1-score": 0.8820120980579433,
+      "support": 7743.0
+    },
+    "Private room": {
+      "precision": 0.8448834696712456,
+      "recall": 0.8377716559534741,
+      "f1-score": 0.841312533620226,
+      "support": 6534.0
+    },
+    "Shared room": {
+      "precision": 0.5935483870967742,
+      "recall": 0.2884012539184953,
+      "f1-score": 0.3881856540084388,
+      "support": 319.0
+    },
+    "accuracy": 0.8558509180597424,
+    "macro avg": {
+      "precision": 0.7694379319930911,
+      "recall": 0.6735527504902777,
+      "f1-score": 0.703836761895536,
+      "support": 14596.0
+    },
+    "weighted avg": {
+      "precision": 0.8526518485632041,
+      "recall": 0.8558509180597424,
+      "f1-score": 0.8529999310472666,
+      "support": 14596.0
+    }
+  }
+}
