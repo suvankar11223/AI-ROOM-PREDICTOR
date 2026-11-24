@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 410" role="img" aria-labelledby="title desc">
+  <title id="title">Staywise model training and evaluation workflow</title>
+  <desc id="desc">The 2019 dataset is split by host, then fitted preprocessing and a class-balanced HistGradientBoosting classifier are placed inside a scikit-learn pipeline. Sigmoid calibration uses three stratified, host-grouped folds on training data only.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5 0 10Z" fill="#c0430d"/>
+    </marker>
+    <style>
+      .kicker{font:600 11px Arial,sans-serif;letter-spacing:1.4px;fill:#9c360a}
+      .title{font:600 24px Arial,sans-serif;fill:#15140f}
+      .stage{font:600 10px Arial,sans-serif;letter-spacing:1.2px;fill:#9c360a}
+      .head{font:600 15px Arial,sans-serif;fill:#15140f}
+      .body{font:13px Arial,sans-serif;fill:#55514a}
+      .card{fill:#fdfcf9;stroke:#c9c2b1;stroke-width:1.5}
+      .line{stroke:#c0430d;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .foot{font:13px Arial,sans-serif;fill:#6f6a5e}
+    </style>
+  </defs>
+  <rect width="1280" height="410" rx="8" fill="#f4f1ea"/>
+  <text x="40" y="42" class="kicker">WHAT HAPPENS BEFORE A MODEL IS SERVED</text>
+  <text x="40" y="75" class="title">Host-aware split, fitted pipeline, calibrated probabilities</text>
+
+  <rect x="36" y="120" width="177" height="180" rx="6" class="card"/>
+  <text x="52" y="148" class="stage">01 / DATA</text>
+  <text x="52" y="179" class="head">NYC 2019</text>
+  <text x="52" y="207" class="body">48,895 listings</text>
+  <text x="52" y="229" class="body">3 room types</text>
+  <text x="52" y="268" class="body">Snapshot-time labels</text>
+
+  <path d="M220 210H240" class="line"/>
+  <rect x="247" y="120" width="177" height="180" rx="6" class="card"/>
+  <text x="263" y="148" class="stage">02 / SPLIT</text>
+  <text x="263" y="179" class="head">By host ID</text>
+  <text x="263" y="207" class="body">70% train</text>
+  <text x="263" y="229" class="body">30% test</text>
+  <text x="263" y="268" class="body">0 host overlap</text>
+
+  <path d="M431 210H451" class="line"/>
+  <rect x="458" y="120" width="177" height="180" rx="6" class="card"/>
+  <text x="474" y="148" class="stage">03 / FEATURES</text>
+  <text x="474" y="179" class="head">Two contracts</text>
+  <text x="474" y="207" class="body">8 features, no reviews</text>
+  <text x="474" y="229" class="body">10 features, with reviews</text>
+  <text x="474" y="268" class="body">Same target classes</text>
+
+  <path d="M642 210H662" class="line"/>
+  <rect x="669" y="120" width="177" height="180" rx="6" class="card"/>
+  <text x="685" y="148" class="stage">04 / PIPELINE</text>
+  <text x="685" y="179" class="head">Preprocessing</text>
+  <text x="685" y="207" class="body">Impute numeric values</text>
+  <text x="685" y="229" class="body">One-hot categories</text>
+  <text x="685" y="268" class="body">Fit inside each fold</text>
+
+  <path d="M853 210H873" class="line"/>
+  <rect x="880" y="120" width="177" height="180" rx="6" class="card"/>
+  <text x="896" y="148" class="stage">05 / CLASSIFIER</text>
+  <text x="896" y="179" class="head">HistGradient</text>
+  <text x="896" y="201" class="head">Boosting</text>
+  <text x="896" y="237" class="body">Balanced class weights</text>
+  <text x="896" y="268" class="body">scikit-learn pipeline</text>
+
+  <path d="M1064 210H1084" class="line"/>
+  <rect x="1091" y="120" width="153" height="180" rx="6" class="card"/>
+  <text x="1107" y="148" class="stage">06 / CALIBRATE</text>
+  <text x="1107" y="179" class="head">Sigmoid</text>
+  <text x="1107" y="207" class="body">3 grouped folds</text>
+  <text x="1107" y="229" class="body">Training data only</text>
+  <text x="1107" y="268" class="body">Class probabilities</text>
+
+  <text x="40" y="346" class="foot">The held-out set is used for reported metrics, not for fitting preprocessing or calibration.</text>
+  <text x="40" y="372" class="foot">This evaluates unseen hosts within the same 2019 snapshot; it is not temporal or external validation.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 410" role="img" aria-labelledby="title desc">
+  <title id="title">Staywise eight- and ten-feature model modes</title>
+  <desc id="desc">The no-review model uses eight location, price, availability, and host features. The review-enabled model uses those same eight features plus number of reviews and reviews per month. Both predict the same three room types.</desc>
+  <defs>
+    <style>
+      .kicker{font:600 11px Arial,sans-serif;letter-spacing:1.4px;fill:#9c360a}
+      .title{font:600 24px Arial,sans-serif;fill:#15140f}
+      .head{font:600 18px Arial,sans-serif;fill:#15140f}
+      .body{font:14px Arial,sans-serif;fill:#55514a}
+      .small{font:12px Arial,sans-serif;fill:#6f6a5e}
+      .card{fill:#fdfcf9;stroke:#c9c2b1;stroke-width:1.5}
+      .shared{fill:#efece3;stroke:#c9c2b1}
+      .extra{fill:#f7e9e1;stroke:#c0430d}
+      .badge{font:600 12px Arial,sans-serif;fill:#9c360a}
+    </style>
+  </defs>
+  <rect width="1280" height="410" rx="8" fill="#f4f1ea"/>
+  <text x="42" y="44" class="kicker">FEATURE AVAILABILITY CHANGES THE MODEL CONTRACT</text>
+  <text x="42" y="78" class="title">Two trained bundles; one three-class target</text>
+
+  <rect x="42" y="110" width="574" height="230" rx="6" class="card"/>
+  <text x="68" y="148" class="head">Without reviews</text>
+  <text x="68" y="171" class="small">Cold-start feature contract</text>
+  <rect x="68" y="192" width="522" height="85" rx="5" class="shared"/>
+  <text x="88" y="218" class="badge">8 LISTING FEATURES</text>
+  <text x="88" y="244" class="body">Borough + neighbourhood  /  coordinates</text>
+  <text x="88" y="266" class="body">Price  /  minimum nights  /  availability  /  host count</text>
+  <text x="68" y="316" class="small">Reviews are not required or sent to this model.</text>
+
+  <rect x="664" y="110" width="574" height="230" rx="6" class="card"/>
+  <text x="690" y="148" class="head">With reviews</text>
+  <text x="690" y="171" class="small">Review-enabled feature contract</text>
+  <rect x="690" y="192" width="522" height="69" rx="5" class="shared"/>
+  <text x="710" y="217" class="badge">SAME 8 LISTING FEATURES</text>
+  <text x="710" y="244" class="body">Location  /  coordinates  /  price  /  availability  /  host count</text>
+  <rect x="690" y="273" width="250" height="46" rx="5" class="extra"/>
+  <text x="707" y="302" class="body">Number of reviews</text>
+  <rect x="954" y="273" width="258" height="46" rx="5" class="extra"/>
+  <text x="971" y="302" class="body">Reviews per month</text>
+
+  <path d="M329 350v17h622v-17" fill="none" stroke="#9c360a" stroke-width="1.5"/>
+  <text x="444" y="391" class="badge">BOTH RETURN PROBABILITIES FOR 3 ROOM TYPES</text>
+</svg>

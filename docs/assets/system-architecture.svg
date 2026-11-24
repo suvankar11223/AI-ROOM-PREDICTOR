@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 390" role="img" aria-labelledby="title desc">
+  <title id="title">Staywise system architecture</title>
+  <desc id="desc">The React application sends listing data to FastAPI. The API validates it, selects one of two versioned scikit-learn model bundles, and returns a room type with class probabilities.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5 0 10Z" fill="#c0430d"/>
+    </marker>
+    <style>
+      .title{font:600 25px Arial,sans-serif;fill:#15140f}
+      .sub{font:14px Arial,sans-serif;fill:#6f6a5e}
+      .label{font:600 11px Arial,sans-serif;letter-spacing:1.4px;fill:#9c360a}
+      .head{font:600 18px Arial,sans-serif;fill:#15140f}
+      .body{font:14px Arial,sans-serif;fill:#55514a}
+      .small{font:12px Arial,sans-serif;fill:#6f6a5e}
+      .card{fill:#fdfcf9;stroke:#c9c2b1;stroke-width:1.5}
+      .line{stroke:#c0430d;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1280" height="390" rx="8" fill="#f4f1ea"/>
+  <text x="44" y="46" class="label">FROM LISTING INPUT TO AUDITABLE ESTIMATE</text>
+  <text x="44" y="78" class="title">A small, versioned inference path</text>
+  <text x="44" y="101" class="sub">The interface does not run or approximate the model; it renders the API response.</text>
+
+  <rect x="42" y="134" width="250" height="184" rx="6" class="card"/>
+  <text x="62" y="163" class="label">01 / INTERFACE</text>
+  <text x="62" y="192" class="head">React + Vite</text>
+  <text x="62" y="220" class="body">Collects listing attributes</text>
+  <text x="62" y="242" class="body">and a feature mode.</text>
+  <text x="62" y="282" class="small">POST /api/v1/predict</text>
+
+  <path d="M300 226H330" class="line"/>
+
+  <rect x="340" y="134" width="250" height="184" rx="6" class="card"/>
+  <text x="360" y="163" class="label">02 / API</text>
+  <text x="360" y="192" class="head">FastAPI</text>
+  <text x="360" y="220" class="body">Validates the request, checks</text>
+  <text x="360" y="242" class="body">ranges and required features,</text>
+  <text x="360" y="264" class="body">then selects the requested mode.</text>
+
+  <path d="M598 226H628" class="line"/>
+
+  <rect x="638" y="134" width="250" height="184" rx="6" class="card"/>
+  <text x="658" y="163" class="label">03 / MODEL BUNDLES</text>
+  <text x="658" y="192" class="head">Version 3.0.0</text>
+  <text x="658" y="222" class="body">Without reviews</text>
+  <text x="658" y="245" class="small">8 features</text>
+  <text x="658" y="276" class="body">With reviews</text>
+  <text x="658" y="299" class="small">10 features</text>
+
+  <path d="M896 226H926" class="line"/>
+
+  <rect x="936" y="134" width="300" height="184" rx="6" class="card"/>
+  <text x="956" y="163" class="label">04 / RESPONSE</text>
+  <text x="956" y="192" class="head">Prediction + probabilities</text>
+  <text x="956" y="222" class="body">Predicted room type and its</text>
+  <text x="956" y="244" class="body">probability, plus probabilities</text>
+  <text x="956" y="266" class="body">for all three classes.</text>
+  <text x="956" y="299" class="small">Shown directly in the result panel</text>
+</svg>
