@@ -16,10 +16,10 @@
 </div>
 
 <p align="center">
-  <img src="docs/assets/staywise-predictor.png" alt="Staywise predictor interface showing the listing form, New York illustration and room-type prediction panel" width="100%" />
+  <img src="Staywise_NYC_Airbnb_Predictor_Complete/nyc-airbnb-predictor/docs/assets/staywise-predictor.png" alt="Staywise prediction form with listing inputs and the Predict room type button" width="100%" />
 </p>
 
-<p align="center"><sub>Current application screenshot · light editorial palette, warm terracotta accents, NYC-inspired architectural illustration</sub></p>
+<p align="center"><sub>Predictor interface screenshot captured from the running frontend.</sub></p>
 
 ---
 
@@ -48,7 +48,7 @@ It combines a React interface, a FastAPI inference service, and two separately t
 
 ## How a prediction travels through Staywise
 
-![Staywise runtime architecture](docs/assets/system-architecture.svg)
+![Staywise runtime architecture](Staywise_NYC_Airbnb_Predictor_Complete/nyc-airbnb-predictor/docs/assets/system-architecture.svg)
 
 1. A user enters listing details and chooses a feature mode.
 2. React sends a JSON request to `POST /api/v1/predict`.
@@ -127,7 +127,7 @@ Staywise uses `GroupShuffleSplit` with `host_id` as the group:
 - The test partition contains 14,596 listings and 11,238 hosts.
 - The number of hosts shared between training and test is **zero**.
 
-![Why Staywise groups listings by host instead of splitting individual rows at random](docs/assets/host-split.svg)
+![Why Staywise groups listings by host instead of splitting individual rows at random](Staywise_NYC_Airbnb_Predictor_Complete/nyc-airbnb-predictor/docs/assets/host-grouped-evaluation.svg)
 
 This makes the holdout more demanding for a new-host scenario. It does not make the evaluation temporal: the dataset is still a 2019 snapshot. See the scikit-learn documentation for [group-based splitters](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-for-grouped-data).
 
@@ -210,7 +210,7 @@ These are results on one host-grouped holdout, not proof of generalization to a 
 
 ## Training and evaluation flow
 
-![Staywise model training and evaluation workflow](docs/assets/model-workflow.svg)
+![Staywise model training and evaluation workflow](Staywise_NYC_Airbnb_Predictor_Complete/nyc-airbnb-predictor/docs/assets/training-pipeline.svg)
 
 The model-development scripts and validation outputs are retained in `ml/research/`. In particular, `nested_validation.py` is supplied as a next-step model-selection workflow; **nested grouped cross-validation and expanded model-family/hyperparameter selection have not been completed**. The presence of a script is not evidence that the analysis has been run or passed.
 
